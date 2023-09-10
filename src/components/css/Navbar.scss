@@ -1,0 +1,49 @@
+@mixin FC {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Navbar {
+  position: fixed;
+  top: 50%; left: 3rem;
+
+  transform: translateY(-50%);
+  
+  @include FC;
+  flex-direction: column;
+  gap: 2rem 0;
+
+  line-height: 1rem;
+
+  .btn {    
+    opacity: 0.8;
+    width: 6rem;
+    height: 2rem;
+    margin: 0;
+
+    border-radius: 100px;
+    border: 2px solid var(--primary-color-2-1);
+    background-color: transparent;
+
+    color: var(--primary-color-3-1);
+    font-family: inherit;
+    font-weight: 800;
+
+    position: relative;
+  }
+
+  .btn.selected {
+    background-color: var(--transparent-primary-color-3-4);
+  }
+
+  hr {
+    width: 0.25rem;
+    height: 2rem;
+
+    margin: 0;
+
+    background-color: var(--primary-color-3-1);
+    border: none;
+  }
+}

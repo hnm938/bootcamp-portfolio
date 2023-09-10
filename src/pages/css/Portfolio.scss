@@ -1,0 +1,22 @@
+@mixin FC {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Portfolio {
+  width: 85%;
+  
+  @include FC;
+  
+  margin: 0 auto;
+  padding: 0 2rem;
+
+  header {
+    h1 {
+      font-size: 5rem;
+      text-transform: uppercase;
+      color: var(--primary-color-3-2);
+    }
+  }
+}

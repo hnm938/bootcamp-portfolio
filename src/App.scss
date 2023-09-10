@@ -1,38 +1,53 @@
-.App {
-  text-align: center;
+@keyframes splitterReveal {
+  0% { clip-path: polygon(0 0, 0 0, 0 30%, 0 30%); }
+  50% { clip-path: polygon(0 0, 100% 0, 100% 30%, 0 30%); }
+  60% { clip-path: polygon(0 0, 100% 0, 100% 30%, 0 30%); }
+  100% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+@mixin FC {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
+.App {
+  width: 100vw;
+  flex-direction: column;
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  #home-portfolio-splitter {
+    width: fit-content;
+    height: 25px;
+    padding: 1rem 3rem;
+    margin: 0 auto;
+
+    @include FC;
+
+    clip-path: polygon(0 0, 0 0, 0 40%, 0 40%);
+    animation: splitterReveal 2s 2s ease forwards;
+
+    border: none;
+    border-top: 3px solid var(--primary-color-2-1);
+    border-width: 2px 4px;
+
+    color: var(--primary-color-2-1);
+    background-color: transparent;
+
+    svg {
+      width: 2.5rem;
+      height: 2.5rem;
+      color: var(--primary-color-3-1);
+    }
   }
-  to {
-    transform: rotate(360deg);
+  
+  #particle-container {
+    width: 100%;
+    height: fit-content;
+    position: absolute;
+    z-index: -1;
+
+    #tsparticles {
+      height: 2000px;
+    }
   }
 }
