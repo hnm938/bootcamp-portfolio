@@ -3,12 +3,12 @@ import "./css/Navbar.scss";
 export const Navbar = () => {
   return (
     <div className="Navbar">
-      <button className="btn selected
-      ">1</button>
-      <hr />
-      <button className="btn">2</button>
-      <hr />
-      <button className="btn">3</button>
+      <button className="btn" onClick={() => {
+        document.querySelector(".Home").scrollIntoView({ behavior: "smooth" });
+      }}>Home</button>
+      <button className="btn">Portfolio</button>
+      <button className="btn">About</button>
+      <button className="btn">Contact</button>
     </div>
-  )
-}
+  );
+};

@@ -17,10 +17,10 @@ export const Particle = () => {
           },
           "particles": {
             "number": {
-              "value": 110,
+              "value": 120,
               "density": {
                 "enable": true,
-                "value_area": 1700
+                "value_area": 1800
               }
             },
             "color": {
@@ -40,20 +40,20 @@ export const Particle = () => {
               }
             },
             "size": {
-              "value": 9,
+              "value": 11,
               "random": true,
               "anim": {
                 "enable": true,
                 "speed": 4,
-                "size_min": 6,
+                "size_min": 7,
                 "sync": false
               }
             },
             "line_linked": {
-              "enable": false,
-              "distance": 150,
+              "enable": true,
+              "distance": 200,
               "color": "#ffffff",
-              "opacity": 0.05,
+              "opacity": 0.1,
               "width": 2,
             },
             "move": {
@@ -77,8 +77,8 @@ export const Particle = () => {
                   "mode": ["repulse"]
                 },
                 "onclick": {
-                  "enable": false,
-                  "mode": "bubble"
+                  "enable": true,
+                  "mode": "push"
                 },
                 "resize": true
               },
@@ -102,7 +102,7 @@ export const Particle = () => {
                   "speed": 3
                 },
                 "push": {
-                  "particles_nb": 4
+                  "particles_nb": 2
                 },
                 "remove": {
                   "particles_nb": 2
