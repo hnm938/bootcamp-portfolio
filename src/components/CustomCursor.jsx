@@ -1,11 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, memo } from "react";
 
-export const CustomCursor = () => {
+export const CustomCursor = memo(() => {
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
-    const buttons = document.querySelectorAll(".btn");
-    const cursor = document.querySelector(".custom-cursor");
+    // const buttons = document.querySelectorAll(".btn");
+    // const cursor = document.querySelector(".custom-cursor");
 
     const handleMouseMove = (e) => {
       setCursorPosition({ x: e.clientX, y: e.clientY });
@@ -13,10 +13,10 @@ export const CustomCursor = () => {
 
     document.addEventListener("mousemove", handleMouseMove);
     
-    buttons.forEach((button) => {
-      button.addEventListener("mouseover", () => { cursor.classList.add("hovering"); })
-      button.addEventListener("mouseleave", () => { cursor.classList.remove("hovering"); })
-    });
+    // buttons.forEach((button) => {
+    //   button.addEventListener("mouseover", () => { cursor.classList.add("hovering"); })
+    //   button.addEventListener("mouseleave", () => { cursor.classList.remove("hovering"); })
+    // });
 
     return () => {
       document.removeEventListener("mousemove", handleMouseMove);
@@ -31,4 +31,4 @@ export const CustomCursor = () => {
       }}
     ></div>
   );
-};
+})

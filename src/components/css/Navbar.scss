@@ -10,6 +10,8 @@
 
   transform: translateY(-50%);
   
+  z-index: 9999;
+
   @include FC;
   flex-direction: column;
   gap: 2rem 0;
@@ -18,12 +20,14 @@
 
   .btn {    
     opacity: 0.8;
-    width: 6rem;
-    height: 2rem;
+    width: 3.5rem;
+    height: 3.5rem;
     margin: 0;
 
+    @include FC;
+
     border-radius: 100px;
-    border: 2px solid var(--primary-color-2-1);
+    border: 2px solid var(--primary-color-3-4);
     background-color: transparent;
 
     color: var(--primary-color-3-1);
@@ -31,10 +35,17 @@
     font-weight: 800;
 
     position: relative;
-  }
 
-  .btn.selected {
-    background-color: var(--transparent-primary-color-3-4);
+    transition: background-color 150ms ease;
+
+    svg {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+
+    &:hover {
+      background-color: var(--transparent-primary-color-3-4);
+    }
   }
 
   hr {

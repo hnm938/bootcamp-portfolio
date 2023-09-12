@@ -1,7 +1,9 @@
+import React, { memo } from "react";
+
 import Particles from "react-tsparticles";
 import { loadFull } from "tsparticles";
 
-export const Particle = () => {
+export const Particle = memo(() => {
   const particlesInit = async (main) => { await loadFull(main); };
 
   return (
@@ -17,10 +19,10 @@ export const Particle = () => {
           },
           "particles": {
             "number": {
-              "value": 120,
+              "value": 100,
               "density": {
                 "enable": true,
-                "value_area": 1800
+                "value_area": 2000
               }
             },
             "color": {
@@ -31,9 +33,9 @@ export const Particle = () => {
             },
             "opacity": {
               "value": 0.6,
-              "random": false,
+              "random": true,
               "anim": {
-                "enable": true,
+                "enable": false,
                 "speed": 1,
                 "opacity_min": 0.1,
                 "sync": false
@@ -58,7 +60,7 @@ export const Particle = () => {
             },
             "move": {
               "enable": true,
-              "speed": 0.5,
+              "speed": 0.25,
               "direction": "none",
               "random": true,
               "straight": true,
@@ -110,6 +112,7 @@ export const Particle = () => {
               }
           },
           "retina_detect": true,
+          "fps_limit": 30,
           "background": {
             "color": "inherit",
             "image": "",
@@ -121,4 +124,4 @@ export const Particle = () => {
       />
     </div>
   )
-}
+})
