@@ -1,10 +1,13 @@
+// Using memo to optimize all my components with no prop or state changes
+import React, { memo } from "react";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithubAlt, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 
 import "./css/Home.scss";
 
-export default function Home() {
+function Home() {
   return (
     <div className="Home">
       <header>
@@ -45,3 +48,5 @@ export default function Home() {
     </div>
   );
 }
+
+export default memo(Home);

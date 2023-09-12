@@ -1,8 +1,6 @@
 @keyframes splitterReveal {
-  0% { clip-path: polygon(0 0, 0 0, 0 30%, 0 30%); }
-  50% { clip-path: polygon(0 0, 100% 0, 100% 30%, 0 30%); }
-  60% { clip-path: polygon(0 0, 100% 0, 100% 30%, 0 30%); }
-  100% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
 @mixin FC {
@@ -23,20 +21,36 @@
 
     @include FC;
 
-    clip-path: polygon(0 0, 0 0, 0 40%, 0 40%);
-    animation: splitterReveal 2s 2s ease forwards;
+    opacity: 0;
+    animation: splitterReveal 1s 2.5s ease forwards;
 
     border: none;
-    border-top: 3px solid var(--primary-color-2-1);
-    border-width: 2px 4px;
 
     color: var(--primary-color-2-1);
     background-color: transparent;
 
-    svg {
-      width: 2.5rem;
-      height: 2.5rem;
-      color: var(--primary-color-3-1);
+    img {
+      width: 500px;
+      height: 200px;
+      position: absolute;
+      transform: translate(8px, -5.5rem);
+    }
+
+    div {
+      @include FC;
+      flex-direction: column;
+
+      transform: translateY(2.5rem);
+
+      svg {
+        width: 2.5rem;
+        height: 2.5rem;
+        color: var(--primary-color-3-1);
+      }
+
+      svg:nth-of-type(2) { transform: translateY(-0.6rem); }
+      svg:nth-of-type(3) { transform: translateY(-0.6rem * 2); }
+      svg:nth-of-type(4) { transform: translateY(-0.6rem * 3); }
     }
   }
   
