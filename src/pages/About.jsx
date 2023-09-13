@@ -1,3 +1,5 @@
+import resume from "../assets/Mock_Resume.docx";
+
 import "./css/About.scss";
 
 import { Footer } from "../components/Footer";
@@ -49,6 +51,17 @@ export default function About() {
               <li>Unreal</li>
             </ul>
           </div>
+          <a
+            id="downloadLink"
+            href={resume}
+            download
+            style={{display: "none"}}
+          >resume download link</a>
+          <button
+            onClick={(button) => {
+              button.target.previousElementSibling.click();
+            }}
+          >Download Resume</button>
         </div>
 
         <div className="about-me--section">
@@ -66,7 +79,7 @@ export default function About() {
             naturally led me to programming. Unlike the usual introduction to
             coding through block-based methods, my initial foray was into game
             development. I vividly recall spending countless hours immersed in
-            Unity, crafting games that, although often left unfinished, ignited
+            Unity crafting games that, although often left unfinished, ignited
             my creativity.
             <br />
             <br />
