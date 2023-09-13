@@ -1,3 +1,5 @@
+import resume from "../assets/Mock_Resume.docx";
+
 import "./css/About.scss";
 
 import { Footer } from "../components/Footer";
@@ -49,6 +51,17 @@ export default function About() {
               <li>Unreal</li>
             </ul>
           </div>
+          <a
+            id="downloadLink"
+            href={resume}
+            download
+            style={{display: "none"}}
+          >resume download link</a>
+          <button
+            onClick={(button) => {
+              button.target.previousElementSibling.click();
+            }}
+          >Download Resume</button>
         </div>
 
         <div className="about-me--section">

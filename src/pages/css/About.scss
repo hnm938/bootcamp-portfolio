@@ -93,6 +93,26 @@
       }
 
       p { width: 90%; }
+
+      button {
+        height: 2.5rem;
+        width: fit-content;
+        margin: 0 0 1.5rem 0;
+        padding: 0 2.5rem;
+
+        color: var(--primary-color-2-1);
+        font-family: inherit;
+        
+        background: transparent;
+        border: solid var(--primary-color-3-1) 2px;
+        border-radius: 0.5rem;
+
+        transition: background-color 150ms ease;
+
+        &:hover {
+          background-color: var(--transparent-primary-color-3-4);
+        }
+      }
     }
   }
 }
