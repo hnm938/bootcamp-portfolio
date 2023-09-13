@@ -16,14 +16,28 @@ function Home() {
           <h1>Abe Hodos</h1>
           <h1>Abe Hodos</h1>
           <h1>Abe Hodos</h1>
-          <h2>Welcome</h2>
-          <h2>to</h2>
-          <h2>my</h2>
-          <h2>Portfolio ...</h2>
+          <div id="subtitle-container">
+            <div>
+              <h2>Welcome</h2>
+              <h2>to</h2>
+              <h2>my</h2>
+              <h2>Portfolio</h2>
+            </div>
+            <div>
+              <h2>Back End</h2>
+              <h2>Font End</h2>
+              <h2>UI/UX</h2>
+            </div>
+          </div>
         </div>
       </header>
       <div id="social-links">
-        <button className="btn">
+        <button
+          className="btn"
+          onClick={() => {
+            window.open("https://www.linkedin.com/in/abe-hodos-212985270/");
+          }}
+        >
           <FontAwesomeIcon icon={faLinkedinIn} />  LinkedIn
         </button>
         <button
