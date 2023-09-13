@@ -60,7 +60,7 @@ export const Particle = memo(() => {
             },
             "move": {
               "enable": true,
-              "speed": 0.25,
+              "speed": 0.5,
               "direction": "none",
               "random": true,
               "straight": true,
