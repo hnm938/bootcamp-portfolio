@@ -1,3 +1,5 @@
+import { Helmet } from "react-helmet";
+
 import resume from "../assets/Mock_Resume.docx";
 
 import "./css/About.scss";
@@ -7,6 +9,9 @@ import { Footer } from "../components/Footer";
 export default function About() {
   return (
     <div className="About">
+      <Helmet>
+        <title>Portfolio || About Me</title>
+      </Helmet>
       <header>
         <h1 className="page-title">About Me</h1>
       </header>
@@ -55,13 +60,17 @@ export default function About() {
             id="downloadLink"
             href={resume}
             download
-            style={{display: "none"}}
-          >resume download link</a>
+            style={{ display: "none" }}
+          >
+            resume download link
+          </a>
           <button
             onClick={(button) => {
               button.target.previousElementSibling.click();
             }}
-          >Download Resume</button>
+          >
+            Download Resume
+          </button>
         </div>
 
         <div className="about-me--section">

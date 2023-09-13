@@ -1,3 +1,5 @@
+import { Helmet } from "react-helmet";
+
 import { useEffect} from "react";
 import { Footer } from "../components/Footer";
 
@@ -30,6 +32,9 @@ export default function Contact() {
 
   return (
     <div className="Contact">
+      <Helmet>
+        <title>Portfolio || Contact</title>
+      </Helmet>
       <header>
         <h1 className="page-title">Contact</h1>
       </header>
@@ -47,7 +52,10 @@ export default function Contact() {
                 name="name"
                 required
               />
-              <p className="error-message" style={{ margin: "0.5rem 0 0 0" }}></p>
+              <p
+                className="error-message"
+                style={{ margin: "0.5rem 0 0 0" }}
+              ></p>
             </div>
 
             <div className="form-group" style={{ gridRow: "2" }}>
@@ -64,7 +72,10 @@ export default function Contact() {
                 }}
                 required
               />
-              <p className="error-message" style={{ margin: "0.5rem 0 0 0" }}></p>
+              <p
+                className="error-message"
+                style={{ margin: "0.5rem 0 0 0" }}
+              ></p>
             </div>
 
             <div className="form-group" style={{ gridRow: "3" }}>
@@ -75,7 +86,10 @@ export default function Contact() {
                 name="message"
                 required
               />
-              <p className="error-message" style={{ margin: "0.5rem 0 0 0" }}></p>
+              <p
+                className="error-message"
+                style={{ margin: "0.5rem 0 0 0" }}
+              ></p>
             </div>
             <button
               type="submit"

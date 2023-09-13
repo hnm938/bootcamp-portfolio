@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 
 import { Particle }  from "./components/Particle";
 import { CustomCursor } from "./components/CustomCursor";

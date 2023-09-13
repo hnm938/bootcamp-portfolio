@@ -1,4 +1,5 @@
 // Using memo to optimize all my components with no prop or state changes
+import { Helmet } from "react-helmet";
 import React, { memo, Suspense } from "react";
 
 import { Project } from "../components/Project";
@@ -12,6 +13,9 @@ import "./css/Portfolio.scss";
 function Portfolio() {
   return (
     <div className="Portfolio">
+      <Helmet>
+        <title>Portfolio || Projects</title>
+      </Helmet>
       <header>
         <h1 className="page-title">This is my work</h1>
       </header>
