@@ -79,7 +79,7 @@ export default function About() {
             naturally led me to programming. Unlike the usual introduction to
             coding through block-based methods, my initial foray was into game
             development. I vividly recall spending countless hours immersed in
-            Unity, crafting games that, although often left unfinished, ignited
+            Unity crafting games that, although often left unfinished, ignited
             my creativity.
             <br />
             <br />
