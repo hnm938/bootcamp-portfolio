@@ -24,6 +24,7 @@ web developement for me.
 ## Demo
 
 You can visit my portfolio website live [Here](https://hnm938.github.io/bootcamp-portfolio/).
+https://hnm938.github.io/bootcamp-portfolio/
 
 ## Technologies Used
 
