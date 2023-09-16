@@ -8,6 +8,10 @@ This project was on of the if not the most enjoyable projects worked on \
 getting to design and create a website has always been the most fun part of \ 
 web developement for me.
 
+![image](https://github.com/hnm938/bootcamp-portfolio/assets/32249670/6a34ca34-edc3-4992-b6e2-bcbcdef4fa4f)
+![image](https://github.com/hnm938/bootcamp-portfolio/assets/32249670/95fc97e4-5f44-44bb-8558-cf9a9a042b97)
+
+
 ## Table of Contents
 
 - [Demo](#demo)
