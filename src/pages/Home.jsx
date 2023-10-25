@@ -1,4 +1,5 @@
 // Using memo to optimize all my components with no prop or state changes
+import { Helmet } from "react-helmet";
 import React, { memo } from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -10,6 +11,9 @@ import "./css/Home.scss";
 function Home() {
   return (
     <div className="Home">
+      <Helmet>
+        <title>Portfolio || Home</title>
+      </Helmet>
       <header>
         <div id="title-container">
           <h1>Abe Hodos</h1>
