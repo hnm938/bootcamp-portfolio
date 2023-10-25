@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet";
 
-import resume from "../assets/Mock_Resume.docx";
+import resume from "../assets/Resume.pdf";
 
 import "./css/About.scss";
 
