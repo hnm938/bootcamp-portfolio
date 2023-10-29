@@ -1,6 +1,10 @@
 @keyframes splitterReveal {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @mixin FC {
@@ -10,9 +14,6 @@
 }
 
 .App {
-  width: 100vw;
-  flex-direction: column;
-
   #home-portfolio-splitter {
     width: fit-content;
     height: 25px;
@@ -48,14 +49,21 @@
         color: var(--primary-color-3-1);
       }
 
-      svg:nth-of-type(2) { transform: translateY(-0.6rem); }
-      svg:nth-of-type(3) { transform: translateY(-0.6rem * 2); }
-      svg:nth-of-type(4) { transform: translateY(-0.6rem * 3); }
+      svg:nth-of-type(2) {
+        transform: translateY(-0.6rem);
+      }
+      svg:nth-of-type(3) {
+        transform: translateY(-0.6rem * 2);
+      }
+      svg:nth-of-type(4) {
+        transform: translateY(-0.6rem * 3);
+      }
     }
   }
-  
+
   #particle-container {
     width: 100%;
+    background-color: var(--background-color);
     height: fit-content;
     position: absolute;
     z-index: -1;
