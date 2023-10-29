@@ -30,11 +30,15 @@ export const Navigator = memo(() => {
 
   return (
     <div className="Navigator">
-      <button id="scroll-indicator-1" className="btn selected" onClick={console.log("123")}></button>
+      <button
+        id="scroll-indicator-1"
+        className="navigator-btn selected"
+        onClick={console.log("123")}
+      ></button>
       <hr />
-      <button id="scroll-indicator-2" className="btn"></button>
+      <button id="scroll-indicator-2" className="navigator-btn"></button>
       <hr />
-      <button id="scroll-indicator-3" className="btn"></button>
+      <button id="scroll-indicator-3" className="navigator-btn"></button>
     </div>
   );
 })

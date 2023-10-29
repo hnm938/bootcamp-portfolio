@@ -1,70 +1,69 @@
-// Using memo to optimize all my components with no prop or state changes
-import { Helmet } from "react-helmet";
-import React, { memo } from "react";
-
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGithubAlt, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
-import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
-
 import "./css/Home.scss";
+import { Particle } from "../components/Particle";
+import { useEffect } from "react";
 
-function Home() {
+export default function Home() {
+  useEffect(() => {
+    const parent = document.querySelector(".Home");
+    const scrollYPerView = parent.clientHeight;
+    if (parent) {
+      parent.addEventListener("wheel", function (event) {
+        event.preventDefault();
+        if (event.deltaY > 0) {
+          scrollDown();
+        } else {
+          scrollUp();
+        }
+      });
+
+      function scrollUp() {
+        let currentScrollY = parent.scrollTop;
+        parent.scroll({
+          top: currentScrollY - scrollYPerView,
+          left: 0,
+          behavior: "smooth",
+        });
+      }
+
+      function scrollDown() {
+        let currentScrollY = parent.scrollTop;
+        parent.scroll({
+          top: currentScrollY + scrollYPerView,
+          left: 0,
+          behavior: "smooth",
+        });
+      }
+    }
+  }, []);
+
   return (
     <div className="Home">
-      <Helmet>
-        <title>Portfolio || Home</title>
-      </Helmet>
-      <header>
-        <div id="title-container">
-          <h1>Abe Hodos</h1>
-          <h1>Abe Hodos</h1>
-          <h1>Abe Hodos</h1>
-          <h1>Abe Hodos</h1>
-          <div id="subtitle-container">
-            <div>
-              <h2>Welcome</h2>
-              <h2>to</h2>
-              <h2>my</h2>
-              <h2>Portfolio</h2>
-            </div>
-            <div>
-              <h2>Back End</h2>
-              <h2>Font End</h2>
-              <h2>UI/UX</h2>
-            </div>
-          </div>
-        </div>
-      </header>
-      <div id="social-links">
-        <button
-          className="btn"
-          onClick={() => {
-            window.open("https://www.linkedin.com/in/abe-hodos-212985270/");
-          }}
-        >
-          <FontAwesomeIcon icon={faLinkedinIn} />  LinkedIn
-        </button>
-        <button
-          className="btn"
-          onClick={() => {
-            window.open("https://www.github.com/hnm938");
-          }}
-        >
-          <FontAwesomeIcon icon={faGithubAlt} />  GitHub
-        </button>
-        <button
-          className="btn"
-          onClick={() => {
-            window.open(
-              "mailto:abrahamhodos@gmail.com?subject=I want to hire you!"
-            );
-          }}
-        >
-          <FontAwesomeIcon icon={faEnvelope} />  Contact
-        </button>
+      <h1>Home</h1>
+      <div id="particle-container">
+        <Particle />
       </div>
+      <section id="home--header">
+        <div id="header--title">
+          <h1>Abe Hodos</h1>
+          <h1>Developer</h1>
+          <h1>Designer</h1>
+        </div>
+        <div id="header--controls">
+          <button className="btn">GitHub</button>
+          <button className="btn">LinkedIn</button>
+          <button className="btn filled">Resume</button>
+        </div>
+        <div id="header--subtitle">
+          <p>
+            18 year developer & UI/UX designer <br />
+            based in <span>Ontario, Canada</span> ready <br />
+            to work and show my skills
+          </p>
+          <button className="btn">Contact Me</button>
+        </div>
+      </section>
+      <section></section>
+      <section></section>
     </div>
   );
 }
-
-export default memo(Home);
