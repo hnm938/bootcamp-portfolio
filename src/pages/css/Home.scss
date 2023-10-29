@@ -61,7 +61,9 @@
     }
 
     #header--controls {
-      width: 100%;
+      align-self: flex-start;
+      overflow: hidden;
+      transform-origin: bottom left;
       margin: 2em 0 0 0;
       
       @include flex(row, center, flex-start);
@@ -81,12 +83,17 @@
       @include flex(column, flex-end, center);
       width: 100%;
       
-      p {
-        margin: 1cqw 0;
+      pre {
         color: var(--white-3);
         letter-spacing: 0.15em;
-        font-size: clamp(20px, 1.75cqw, 1.75cqw);
         font-family: "Titillium Web", sans-serif;
+        font-size: clamp(20px, 1.75cqw, 1.75cqw);
+        margin: 1cqw 0;
+        text-align: right;
+      }
+      p {
+        letter-spacing: 0.15em;
+        font-size: clamp(20px, 1.75cqw, 1.75cqw);
         text-align: right;
 
         span { color: var(--red-3); }
