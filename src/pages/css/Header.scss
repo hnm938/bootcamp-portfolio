@@ -1,0 +1,120 @@
+@import "../../assets/mixins";
+
+.Header {
+
+  @include flex(row);
+  flex-direction: row !important;
+
+  #header--container {
+    margin-top: clamp(60px, 2.5cqw, 2.5cqw);
+    width: 50%;
+    height: 100vh;
+    
+    #header--title {
+      $font-size: 7.5cqw;
+      width: 100%;
+      line-height: clamp(75px, $font-size, $font-size);
+      white-space: nowrap;
+
+      h1 {
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-size: clamp(75px, $font-size, $font-size);
+        margin: 0;
+
+        &:nth-of-type(1) {
+          margin-top: clamp(15px, 1.25cqw, 1.25cqw);
+          font-weight: 700;
+        }
+        &:nth-of-type(2) {
+          font-weight: 400;
+        }
+        &:nth-of-type(3) {
+          $outline-color: var(--red-3);
+          color: var(--background-color);
+          text-shadow: -1px -1px 0 $outline-color, 1px -1px 0 $outline-color,
+            -1px 1px 0 $outline-color, 1px 1px 0 $outline-color;
+        }
+      }
+
+      @media only screen and (max-width: 700px) {
+        h1 {
+          text-align: center;
+        }
+      }
+    }
+
+    #header--controls {
+      align-self: flex-start;
+      overflow: hidden;
+      transform-origin: bottom left;
+      margin: 25px 0;
+
+      @include flex(row, center, flex-start);
+      gap: 0 clamp(10px, 1cqw, 1cqw);
+
+      button {
+        width: clamp(135px, 10cqw, 10cqw);
+        height: clamp(40px, 2.5cqw, 2.5cqw);
+
+        @include flex;
+
+        border-radius: 100px;
+      }
+
+      @media only screen and (max-width: 700px) {
+        margin: 25px auto;
+        button {
+          width: clamp(calc(70vw / 3), 10cqw, 10cqw);
+        }
+      }
+    }
+
+    #header--subtitle {
+      @include flex(column, flex-start, center);
+      width: 100%;
+      transform: translateY(-40px);
+
+      pre {
+        color: var(--white-3);
+        letter-spacing: 0.15em;
+        font-family: "Titillium Web", sans-serif;
+        font-size: clamp(20px, 1.75cqw, 1.75cqw);
+        margin: 1cqw 0;
+        white-space: pre-line;
+        text-align: left;
+      }
+
+      span {
+        color: var(--red-3);
+      }
+
+      button {
+        padding: 0.5cqw 1cqw;
+        margin: 0;
+        letter-spacing: 0.15em;
+        font-weight: 700;
+        box-shadow: none;
+        border-radius: 0;
+        border-bottom: solid var(--red-3);
+        font-size: clamp(20px, 1cqw, 1cqw);
+      }
+
+      @media only screen and (max-width: 700px) {
+        @include flex(column, center, center);
+        pre {
+          white-space: pre-line;
+          width: 100vw;
+          text-align: center;
+          display: inline-block;
+        }
+      }
+    }
+  }
+
+  #model--container {
+    margin-top: 2.5cqw;
+    height: 100vh;
+    width: 50%;
+  }
+}

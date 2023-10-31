@@ -54,6 +54,9 @@
 
 body {
   // cursor: none;
+  perspective: 800px;
+  perspective-origin: bottom;
+
   overflow: hidden;
   font-family: "Poppins", "Montserrat", sans-serif;
 }
@@ -62,16 +65,17 @@ body {
 button {
   font-family: "Titillium Web", sans-serif !important;
   font-size: clamp(12px, 0.75cqw, 0.75cqw);
-  &:hover { cursor: none; }
+  // &:hover { cursor: none; }
 }
 
 .custom-cursor {
-  width: 0.4rem;
-  height: 0.4rem;
+  width: 0.5em;
+  height: 0.5em;
   position: fixed;
-  top: 3px;
+  top: 5px; left: 0px;
 
   background: var(--primary-color-3-1);
+  background-color: rgba(173, 5, 55, 0.5);
   border-radius: 100%;
 
   pointer-events: none !important;
@@ -83,9 +87,9 @@ button {
     content: "";
     opacity: 0.7;
 
-    width: 5rem;
-    height: 5rem;
-    border: 2px solid var(--primary-color-3-3);
+    width: 5em;
+    height: 5em;
+    border: 2px solid var(--red-5);
     background-color: rgba(255, 255, 255, 0);
     border-radius: 50%;
 
@@ -94,15 +98,16 @@ button {
     left: 50%;
     transform: translate(-50%, -50%);
 
-    transition: background-color 300ms ease, transform 300ms ease;
+    transition:  backdrop-filter 300ms ease, border 300ms ease, transform 300ms ease;
   }
 }
 
 .custom-cursor.hovering {
   &::after {
-    transform: translate(-50%, -50%) scale(0.8);
-    background-color: var(--transparent-primary-color-3-4);
+    backdrop-filter: hue-rotate(180deg) invert(1) sepia(50%);
+    transform: translate(-50%, -50%) scale(1.4);
     transition: background-color 300ms ease, transform 300ms ease;
+    border: none;
   }
 }
 
