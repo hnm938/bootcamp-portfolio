@@ -16,13 +16,15 @@
     z-index: -1;
 
     #tsparticles {
-      height: 300vh;
+      height: 209vh;
     }
   }
 
   section {
+    border: solid red p1x;
     width: 95%;
-    height: calc(100vh - 55px);
+    height: calc((100vh - 55px));
+    padding: 1cqw 0;
     margin: 0 auto;
 
     @include flex(column, center, flex-start);
@@ -30,85 +32,5 @@
     scroll-snap-align: center;
 
     color: var(--red-3);
-  }
-
-  #home--header {
-    #header--title {
-      $font-size: 7.5cqw;
-      width: 100%;
-      line-height: clamp(30px, $font-size, $font-size);
-      white-space: nowrap;
-
-      h1 {
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        font-size: clamp(25px, $font-size, $font-size);
-        margin: 0;
-
-        &:nth-of-type(1) {
-          font-weight: 700;
-        }
-        &:nth-of-type(2) {
-          font-weight: 400;
-        }
-        &:nth-of-type(3) {
-          $outline-color: var(--red-3);
-          color: var(--background-color);
-          text-shadow: -1px -1px 0 $outline-color, 1px -1px 0 $outline-color,
-            -1px 1px 0 $outline-color, 1px 1px 0 $outline-color;
-        }
-      }
-    }
-
-    #header--controls {
-      align-self: flex-start;
-      overflow: hidden;
-      transform-origin: bottom left;
-      margin: 2em 0 0 0;
-      
-      @include flex(row, center, flex-start);
-      gap: 0 1cqw;
-      
-      button {
-        width: 10cqw;
-        height: 2.5cqw;
-
-        @include flex;
-
-        border-radius: 100px;
-      }
-    }
-
-    #header--subtitle {
-      @include flex(column, flex-end, center);
-      width: 100%;
-      
-      pre {
-        color: var(--white-3);
-        letter-spacing: 0.15em;
-        font-family: "Titillium Web", sans-serif;
-        font-size: clamp(20px, 1.75cqw, 1.75cqw);
-        margin: 1cqw 0;
-        text-align: right;
-      }
-      p {
-        letter-spacing: 0.15em;
-        font-size: clamp(20px, 1.75cqw, 1.75cqw);
-        text-align: right;
-
-        span { color: var(--red-3); }
-      }
-
-      button {
-        padding: 0.5cqw 1cqw;
-        margin: 0;
-        letter-spacing: 0.15em;
-        font-weight: 700;
-        box-shadow: none;
-        border-radius: 0;
-        border-bottom: solid var(--red-3);
-        font-size: clamp(16px, 1cqw, 1cqw);
-      }
-    }
   }
 }

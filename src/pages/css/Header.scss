@@ -1,0 +1,187 @@
+@import "../../assets/mixins";
+
+.Header {
+  @include flex(row);
+  flex-direction: row !important;
+
+  position: relative;;
+
+  #header--container {
+    margin-top: clamp(60px, 2.5cqw, 2.5cqw);
+    width: 50%;
+    height: 100vh;
+
+    #header--title {
+      $font-size: 7.5cqw;
+      width: 100%;
+      line-height: clamp(75px, $font-size, 150px);
+      white-space: nowrap;
+
+      h1 {
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-size: clamp(75px, $font-size, 150px);
+        margin: 0;
+
+        &:nth-of-type(1) {
+          margin-top: clamp(15px, 1.25cqw, 1.25cqw);
+          font-weight: 700;
+        }
+        &:nth-of-type(2) {
+          font-weight: 400;
+        }
+        &:nth-of-type(3) {
+          $outline-color: var(--red-3);
+          color: var(--background-color);
+          text-shadow: -1px -1px 0 $outline-color, 1px -1px 0 $outline-color,
+            -1px 1px 0 $outline-color, 1px 1px 0 $outline-color;
+        }
+      }
+
+      @media only screen and (max-width: 700px) {
+        h1 {
+          text-align: center;
+        }
+      }
+    }
+
+    #header--controls {
+      align-self: flex-start;
+      overflow: hidden;
+      transform-origin: bottom left;
+      margin: 25px 0;
+
+      @include flex(row, center, flex-start);
+      gap: 0 clamp(10px, 1cqw, 25px);
+
+      button {
+        width: clamp(135px, 10cqw, 50px);
+        height: clamp(40px, 2.5cqw, 25px);
+
+        @include flex;
+
+        border-radius: 100px;
+      }
+
+      @media only screen and (max-width: 700px) {
+        margin: 25px auto;
+        button {
+          width: clamp(calc(70vw / 3), 10cqw, 10cqw);
+        }
+      }
+    }
+
+    #header--subtitle {
+      @include flex(column, flex-start, center);
+      width: 100%;
+      transform: translateY(-40px);
+
+      pre {
+        color: var(--white-3);
+        letter-spacing: 0.15em;
+        font-family: "Titillium Web", sans-serif;
+        font-size: clamp(20px, 1.75cqw, 26px);
+        margin: 1cqw 0;
+        white-space: pre-line;
+        text-align: left;
+      }
+
+      span {
+        color: var(--red-3);
+      }
+
+
+      #contact-button {
+        padding: 0.5cqw 1cqw;
+
+        @include flex(row);
+        gap: 0 0.5em;
+        
+        color: var(--white-2);
+        font-family: "Poppins", sans-serif !important;
+        font-size: 1.5em;
+
+        font-size: 20px;
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        box-shadow: none;
+
+        border-radius: 4px;
+        background-color: var(--red-3);
+
+        transition: all 150ms ease;
+
+        svg { stroke: var(--red-6); }
+
+        &:hover {
+          transform: scale(1.05) translateY(-6px);
+          border-bottom: solid var(--red-5) 6px;
+          transition: all 150ms ease;
+        }
+      }
+
+      @media only screen and (max-width: 700px) {
+        @include flex(column, center, center);
+        pre {
+          white-space: pre-line;
+          width: 100vw;
+          text-align: center;
+          display: inline-block;
+        }
+      }
+    }
+
+    @media only screen and (max-width: 550px) {
+      margin: 6em 0 0 0 !important;
+    }
+    @media only screen and (max-width: 1000px) { 
+      width: 100vw;
+      height: fit-content;
+      margin: 1em 0 auto 0;
+
+      @include flex(column, center, center);
+
+      #header--title {
+        width: fit-content;
+        text-align: center;
+        
+        h1 {
+          font-size: 14vw;
+          line-height: 13vw;
+        }
+      }
+
+      #header--controls {
+        margin: 25px auto 2em auto;
+        width: clamp(350px, 75%, 75%);
+        button { width: 100%; }
+      }
+
+      #header--subtitle {
+        width: fit-content;
+
+        pre { text-align: center; font-size: clamp(16px, 3vw, 3vw); margin-bottom: 1em; }
+        button { margin: 0 auto; font-size: clamp(20px, 3vw, 3vw); }
+      }
+    }
+  }
+
+  #model--container {
+    margin-top: 2.5cqw;
+    height: 100vh;
+    width: 50%;
+    
+    @media only screen and (max-width: 1000px) { display: none; }
+    @media only screen and (max-width: 550px) {
+      display: block;
+
+      width: 250px !important;
+      height: 250px !important;
+      aspect-ratio: 1 / 1;
+
+      position: absolute;
+      top: -0.5em; left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+}

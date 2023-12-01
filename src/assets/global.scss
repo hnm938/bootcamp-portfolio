@@ -54,6 +54,9 @@
 
 body {
   // cursor: none;
+  perspective: 800px;
+  perspective-origin: bottom;
+
   overflow: hidden;
   font-family: "Poppins", "Montserrat", sans-serif;
 }
@@ -61,17 +64,18 @@ body {
 
 button {
   font-family: "Titillium Web", sans-serif !important;
-  font-size: clamp(12px, 0.75cqw, 0.75cqw);
-  &:hover { cursor: none; }
+  font-size: clamp(12px, 0.75cqw, 30px);
+  // &:hover { cursor: none; }
 }
 
 .custom-cursor {
-  width: 0.4rem;
-  height: 0.4rem;
+  width: 0.5em;
+  height: 0.5em;
   position: fixed;
-  top: 3px;
+  top: 5px; left: 0px;
 
   background: var(--primary-color-3-1);
+  background-color: rgba(173, 5, 55, 0.5);
   border-radius: 100%;
 
   pointer-events: none !important;
@@ -83,9 +87,9 @@ button {
     content: "";
     opacity: 0.7;
 
-    width: 5rem;
-    height: 5rem;
-    border: 2px solid var(--primary-color-3-3);
+    width: 6em;
+    height: 6em;
+    border: 2px solid var(--red-5);
     background-color: rgba(255, 255, 255, 0);
     border-radius: 50%;
 
@@ -93,16 +97,20 @@ button {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    backdrop-filter: brightness(1.2) hue-rotate(230deg);
 
-    transition: background-color 300ms ease, transform 300ms ease;
+    transition:  backdrop-filter 300ms ease, border 300ms ease, transform 300ms ease;
   }
 }
 
 .custom-cursor.hovering {
   &::after {
-    transform: translate(-50%, -50%) scale(0.8);
-    background-color: var(--transparent-primary-color-3-4);
+    // backdrop-filter: hue-rotate(180deg) invert(1) sepia(50%);
+    transform: translate(-50%, -50%) scale(1.4);
     transition: background-color 300ms ease, transform 300ms ease;
+    border-color: rgb(101, 28, 101);
+    border-width: 1px;
+    // border: none;
   }
 }
 
@@ -110,13 +118,13 @@ button {
   padding: 0.75em 1.25em;
   background-color: transparent;
   border: none;
-  box-shadow: inset 0 0 0 0.15em var(--red-3);
+  box-shadow: inset 0 0 0 clamp(1px, 0.1cqw, 2px) var(--red-3);
   border-radius: 4px;
   color: var(--white-1);
   letter-spacing: 0.1em;
   font-weight: 600;
   font-family: "Titillium Web", sans-serif !important;
-  font-size: clamp(12px, 0.75cqw, 0.75cqw);
+  font-size: clamp(12px, 0.75cqw, 17px);
   
   transition: all 150ms ease;
   
@@ -134,7 +142,11 @@ button {
 }
 
 .btn.filled {
-  background-color: var(--red-3);
-  box-shadow: none;
+  background-color: var(--red-3) !important;
+  color: var(--white-3);
+  box-shadow: none !important;
+
+  svg { color: var(--white-3); }
+  
   &:hover { background-color: var(--red-1); }
 }

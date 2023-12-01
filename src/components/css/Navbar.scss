@@ -4,8 +4,9 @@
   height: 55px;
   width: 95%;
   margin: 0 auto 0 auto;
-  margin-bottom: clamp(15px, 2cqw, 2cqw);
   padding: 0 0.5cqw;
+
+  position: relative;
 
   background-color: var(--background-color);
   border-bottom: solid var(--red-3) 2px;
@@ -19,7 +20,7 @@
     text-decoration: none;
     font-weight: 600;
     font-family: "Titillium Web", sans-serif !important;
-    font-size: clamp(12px, 0.9cqw, 0.9cqw);
+    font-size: clamp(12px, 0.9cqw, 16px);
 
     position: relative;
 
@@ -41,6 +42,25 @@
       &::after  {
         transform: scaleX(1) translateX(-45%);
       }
+    }
+  }
+
+  #contact-info {
+    position: absolute;
+    right: 0; top: 50%;
+    transform: translateY(-50%);
+
+    color: var(--primary-color-3-3);
+
+    @include flex(row);
+    gap: 0 1em;
+
+    p { font-size: 0.9em; }
+    a { color: var(--primary-color-3-3); @include flex; }
+
+    svg {
+      width: 25px;
+      aspect-ratio: 1 / 1;
     }
   }
 }
