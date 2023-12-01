@@ -1,35 +1,20 @@
 {
   "files": {
-    "main.css": "/bootcamp-portfolio/static/css/main.23e3323a.css",
-    "main.js": "/bootcamp-portfolio/static/js/main.d780d4a0.js",
-    "static/css/327.0b217756.chunk.css": "/bootcamp-portfolio/static/css/327.0b217756.chunk.css",
-    "static/js/327.61156d46.chunk.js": "/bootcamp-portfolio/static/js/327.61156d46.chunk.js",
-    "static/css/163.1dabb0a2.chunk.css": "/bootcamp-portfolio/static/css/163.1dabb0a2.chunk.css",
-    "static/js/163.4c2c910e.chunk.js": "/bootcamp-portfolio/static/js/163.4c2c910e.chunk.js",
-    "static/css/442.29006568.chunk.css": "/bootcamp-portfolio/static/css/442.29006568.chunk.css",
-    "static/js/442.4af86696.chunk.js": "/bootcamp-portfolio/static/js/442.4af86696.chunk.js",
-    "static/css/513.26b75dbb.chunk.css": "/bootcamp-portfolio/static/css/513.26b75dbb.chunk.css",
-    "static/js/513.3118097c.chunk.js": "/bootcamp-portfolio/static/js/513.3118097c.chunk.js",
-    "static/js/810.26ea1480.chunk.js": "/bootcamp-portfolio/static/js/810.26ea1480.chunk.js",
-    "static/js/850.e5102ad5.chunk.js": "/bootcamp-portfolio/static/js/850.e5102ad5.chunk.js",
-    "static/media/Resume.pdf": "/bootcamp-portfolio/static/media/Resume.fdd1bb58050a20c0c3e1.pdf",
-    "static/media/header-vector.svg": "/bootcamp-portfolio/static/media/header-vector.d6f866802ffbaa3b143cf62cef4d39cc.svg",
+    "main.css": "/bootcamp-portfolio/static/css/main.fb32d037.css",
+    "main.js": "/bootcamp-portfolio/static/js/main.09c67d0b.js",
+    "static/css/137.22f998fd.chunk.css": "/bootcamp-portfolio/static/css/137.22f998fd.chunk.css",
+    "static/js/137.18d4eae6.chunk.js": "/bootcamp-portfolio/static/js/137.18d4eae6.chunk.js",
+    "static/js/390.930ba78b.chunk.js": "/bootcamp-portfolio/static/js/390.930ba78b.chunk.js",
+    "static/media/computer.glb": "/bootcamp-portfolio/static/media/computer.a7aaff6f8e2bdfd1a10f.glb",
     "index.html": "/bootcamp-portfolio/index.html",
-    "main.23e3323a.css.map": "/bootcamp-portfolio/static/css/main.23e3323a.css.map",
-    "main.d780d4a0.js.map": "/bootcamp-portfolio/static/js/main.d780d4a0.js.map",
-    "327.0b217756.chunk.css.map": "/bootcamp-portfolio/static/css/327.0b217756.chunk.css.map",
-    "327.61156d46.chunk.js.map": "/bootcamp-portfolio/static/js/327.61156d46.chunk.js.map",
-    "163.1dabb0a2.chunk.css.map": "/bootcamp-portfolio/static/css/163.1dabb0a2.chunk.css.map",
-    "163.4c2c910e.chunk.js.map": "/bootcamp-portfolio/static/js/163.4c2c910e.chunk.js.map",
-    "442.29006568.chunk.css.map": "/bootcamp-portfolio/static/css/442.29006568.chunk.css.map",
-    "442.4af86696.chunk.js.map": "/bootcamp-portfolio/static/js/442.4af86696.chunk.js.map",
-    "513.26b75dbb.chunk.css.map": "/bootcamp-portfolio/static/css/513.26b75dbb.chunk.css.map",
-    "513.3118097c.chunk.js.map": "/bootcamp-portfolio/static/js/513.3118097c.chunk.js.map",
-    "810.26ea1480.chunk.js.map": "/bootcamp-portfolio/static/js/810.26ea1480.chunk.js.map",
-    "850.e5102ad5.chunk.js.map": "/bootcamp-portfolio/static/js/850.e5102ad5.chunk.js.map"
+    "main.fb32d037.css.map": "/bootcamp-portfolio/static/css/main.fb32d037.css.map",
+    "main.09c67d0b.js.map": "/bootcamp-portfolio/static/js/main.09c67d0b.js.map",
+    "137.22f998fd.chunk.css.map": "/bootcamp-portfolio/static/css/137.22f998fd.chunk.css.map",
+    "137.18d4eae6.chunk.js.map": "/bootcamp-portfolio/static/js/137.18d4eae6.chunk.js.map",
+    "390.930ba78b.chunk.js.map": "/bootcamp-portfolio/static/js/390.930ba78b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.23e3323a.css",
-    "static/js/main.d780d4a0.js"
+    "static/css/main.fb32d037.css",
+    "static/js/main.09c67d0b.js"
   ]
 }
