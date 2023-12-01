@@ -1,89 +1,105 @@
-@mixin FC {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+@import "../../assets/mixins";
 
-@keyframes neonFlicker {
-  84% {
-    $outline-color: var(--red-1);
-    $glow-color: var(--red-6);
-    animation: neonflicker 2s ease infinite;
-    text-shadow: 0 0 7px $outline-color, 0 0 10px $outline-color,
-      0 0 1px $outline-color, 0 0 22px $glow-color, 0 0 62px $glow-color,
-      0 0 72px $glow-color, 0 0 20px $glow-color, 0 0 30px $glow-color;
-  }
-  85% { text-shadow: none; }
-  88% {
-    $outline-color: var(--red-1);
-    $glow-color: var(--red-6);
-    animation: neonflicker 2s ease infinite;
-    text-shadow: 0 0 7px $outline-color, 0 0 10px $outline-color,
-      0 0 1px $outline-color, 0 0 22px $glow-color, 0 0 62px $glow-color,
-      0 0 72px $glow-color, 0 0 20px $glow-color, 0 0 30px $glow-color;
-  }
-  95% { text-shadow: none; }
-  98% {
-    $outline-color: var(--red-1);
-    $glow-color: var(--red-6);
-    animation: neonflicker 2s ease infinite;
-    text-shadow: 0 0 7px $outline-color, 0 0 10px $outline-color,
-      0 0 1px $outline-color, 0 0 22px $glow-color, 0 0 62px $glow-color,
-      0 0 72px $glow-color, 0 0 20px $glow-color, 0 0 30px $glow-color;
-  }
+@keyframes mouseMove {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-5px); }
 }
 
 .Portfolio {
-  width: 85%;
+  @include flex;
+  position: relative;
 
-  @include FC;
-  flex-direction: column;
+  #scroll-icon {
+    position: absolute;
+    left: 0; top: 50%;
+    transform: translateY(calc(-50% + 75px));
 
-  margin: 0 auto;
-  padding: 0 2rem;
+    @include flex();
+    gap: 0.5cqw 0;
 
-  header {
-    .page-title {
-      letter-spacing: 0.15em;
-      margin: 5rem 0 0 0;
-      font-size: 5rem;
-      text-transform: uppercase;
-      color: var(--red-1);
-      $outline-color: var(--red-1);
-      $glow-color: var(--red-6);
-      animation: neonFlicker 3s ease infinite;
-      text-shadow: 0 0 7px $outline-color, 0 0 10px $outline-color,
-        0 0 1px $outline-color, 0 0 22px $glow-color, 0 0 62px $glow-color,
-        0 0 72px $glow-color, 0 0 20px $glow-color, 0 0 30px $glow-color;
-      // text-shadow: -1px -1px 0 $outline-color, 1px -1px 0 $outline-color,
-      //   -1px 1px 0 $outline-color, 1px 1px 0 $outline-color;
+    div {
+      width: 5px;
+      height: 5px;
+      background-color: var(--red-3);
+      border-radius: 100%;
     }
-  }
 
-  #portfolio-splitter {
-    width: 90%;
-    margin: 0.25rem 0 2.5rem 0;
+    #mouse {
+      width: 30px;
+      height: 45px;
 
-    @include FC;
-    justify-content: space-between;
+      background-color: transparent;
+      border-radius: 60px;
+      border: solid var(--red-3) 2px;
 
+      animation: mouseMove 1s ease infinite alternate;
+
+      position: relative;
+
+      &::after {
+        @include pseudo(3px, 10px, var(--red-3), 1);
+        top: 15px;
+        border-radius: 10px;
+      }
+
+    }
+    
     svg {
-      width: 2rem;
-      height: 2rem;
-      color: var(--primary-color-3-2);
+      height: 30px;
+      width: 30px;
+    }
+    
+    @media only screen and (max-width: 1000px) { display: none; }
+  }
+
+  #portfolio--title {
+    @include flex(row, center, flex-start);
+    gap: 0 1cqw;
+
+    width: 81.75cqw;
+    white-space: nowrap;
+    opacity: 0;
+    margin: 25px 0 0 0;
+    color: var(--red-1);
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    font-size: clamp(33px, 6cqw, 6cqw);
+    transform: translateX(-2.25cqw) translateY(-25px);
+    // transform: translateX(3.25cqw);
+    z-index: 99;
+
+    transition: transform 50ms ease;
+
+    @media only screen and (max-width: 420px) {
+      white-space: unset !important;
+      transform: translateX(5.25cqw);
+    }
+    @media only screen and (max-width: 630px) {
+      transform:  translateX(5.25cqw) translateY(0);
     }
   }
 
-  .page-body {
-    width: 95%;
-    margin: 0 auto;
+  #project-container {
+    width: 90%;
+    margin: 25px 0;
+    height: fit-content;
 
-    position: relative;
+    section {
+      @include flex;
+      gap: 3em 0;
+      height: 100vh;
 
-    #project-grid {
-      display: grid;
-      grid-template-columns: 50% 50%;
-      gap: 5em 3em;
+      &:nth-of-type(1) {
+        scroll-snap-align: none !important;
+        height: fit-content;
+        transform: translateY(-55px);
+      }
+    }
+    
+    @media only screen and (max-width: 630px) {
+      .project.opened {
+        transform: translateY(50px);
+      }
     }
   }
 }

@@ -6,6 +6,7 @@ import "./css/Home.scss";
 
 import Header from "./Header";
 import Intro from "./Intro";
+import Portfolio from "./Portfolio";
 
 export default function Home() {
   useEffect(() => {
@@ -48,8 +49,7 @@ export default function Home() {
       </div>
       <Header />
       <Intro />
-      <section></section>
-      <section></section>
+      <Portfolio />
     </div>
   );
 }

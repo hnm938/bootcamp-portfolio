@@ -23,7 +23,7 @@ export default function TextAnime({ duration=4, text="", delay }) {
       });
       return controls.stop;
     }
-  }, [isInView]);
+  }, [isInView, baseText.length, count, delay, duration]);
 
   return (
     <span className="" ref={ref}>

@@ -1,12 +1,7 @@
 import { Suspense, useRef } from "react";
-import * as THREE from "three";
-import { Canvas, useFrame } from "@react-three/fiber";
-import { useGLTF, OrbitControls, Stage } from "@react-three/drei";
+import { Canvas } from "@react-three/fiber";
+import { useGLTF, OrbitControls } from "@react-three/drei";
 import headerModel from "./computer.glb";
-
-// import * as THREE from "three";
-// import { useRef } from "react";
-// import { Canvas } from "@react-three/fiber";
 
 import { motion } from "framer-motion";
 import TextAnime from "../components/TextAnime";
@@ -22,13 +17,6 @@ export default function Header() {
     });
       
     const parent = useRef();
-    const rotationSpeed = 0.05;
-
-    useFrame((state, delta) => {
-      if (parent.current) {
-        parent.current.rotation.y += rotationSpeed * delta;
-      }
-    });
 
     return (
       <group ref={parent} rotation={[0.35, 10.5, -0.25]} position={[0, 0.1, 0]} {...props}>
@@ -87,7 +75,7 @@ export default function Header() {
           <TextAnime
             duration={4}
             text={`
-          18 year developer & UI/UX designer
+          18 year old developer & UI/UX designer
           based in Ontario, Canada ready
           to work and show off my skills`}
           />
@@ -97,7 +85,22 @@ export default function Header() {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 1, delay: 3 }}
             className="btn"
+            id="contact-button"
           >
+            <svg
+              class="h-8 w-8 text-red-500"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              {" "}
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />{" "}
+              <polyline points="22,6 12,13 2,6" />
+            </svg>
+            
             Contact Me
           </motion.button>
         </div>
@@ -115,25 +118,6 @@ export default function Header() {
           {/* <directionalLight position={[5, 3, 0]} intensity={5} /> */}
           <directionalLight position={[0, 3, 5]} intensity={2} />
         </Canvas>
-        {/* <Canvas
-          dpr={[1, 2]}
-          camera={{ fov: 25, zoom: 1 }}
-          cameraRef={cameraRef}
-        >
-          <PresentationControls
-            enableZoom={false}
-            cameraRef={cameraRef}
-            speed={1.5}
-            global
-            polar={[-0.1, Math.PI / 4]}
-          >
-            <Stage environment="warehouse">
-              <Model scale={0.01} />
-            </Stage>
-          </PresentationControls>
-
-          <directionalLight position={[0, 10, 0]} intensity={0.05} />
-        </Canvas> */}
       </div>
     </section>
   );

@@ -65,6 +65,7 @@ export default function Intro() {
       </div>
       <div id="intro--phone">
         <div id="phone--container">
+          <h2 id="hide-info">Press and Hold anywhere to hide</h2>
           <div id="phone--notch"></div>
           <div id="phone--user">
             <div>
